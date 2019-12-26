@@ -15,7 +15,7 @@ mount -o loop ${iso} tmnt/
 mount --bind tmnt target/media
 
 # install centos-release.
-rpm --nodeps --root ${RPWD}/target -i tmnt/Packages/centos-release-6-5.el6.centos.11.1.x86_64.rpm
+rpm --nodeps --root ${RPWD}/target -i tmnt/Packages/centos-release*.rpm
 
 # set local.repo to temp mount dir.
 sed -i -e "s%baseurl.*%baseurl=file://$(pwd)/tmnt%g" local.repo
